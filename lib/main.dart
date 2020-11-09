@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
+import './constants/constants.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -24,33 +26,94 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<PageViewModel> listPageViewModel = [
     PageViewModel(
-      title: 'Solve Share',
-      body: 'From Solve Share',
-      image: Image.asset('images/img-1.png'),
+      title: kImg1_title,
+      body: kImg1_description,
+      image: Center(
+        child: Image.asset('images/img-1.png'),
+      ),
+      decoration: PageDecoration(
+        titleTextStyle: TextStyle(
+          color: Colors.blue,
+          fontSize: 25.0,
+        ),
+        bodyTextStyle: TextStyle(
+          color: Colors.blue,
+          fontSize: 18.0,
+        ),
+      ),
     ),
     PageViewModel(
-      title: 'Solve Share',
-      body: 'From Solve Share',
-      image: Image.asset('images/img-2.png'),
+      title: kImg2_title,
+      body: kImg2_description,
+      image: Center(
+        child: Image.asset('images/img-2.png'),
+      ),
+      decoration: PageDecoration(
+        titleTextStyle: TextStyle(
+          color: Colors.blue,
+          fontSize: 25.0,
+        ),
+        bodyTextStyle: TextStyle(
+          color: Colors.blue,
+          fontSize: 18.0,
+        ),
+      ),
     ),
     PageViewModel(
-      title: 'Solve Share',
-      body: 'From Solve Share',
-      image: Image.asset('images/img-3.png'),
+      title: kImg3_title,
+      body: kImg3_description,
+      image: Center(
+        child: Image.asset('images/img-3.png'),
+      ),
+      decoration: PageDecoration(
+        titleTextStyle: TextStyle(
+          color: Colors.blue,
+          fontSize: 25.0,
+        ),
+        bodyTextStyle: TextStyle(
+          color: Colors.blue,
+          fontSize: 18.0,
+        ),
+      ),
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return IntroductionScreen(
-      pages: listPageViewModel,
-      onDone: () {},
-      done: Text(
-        'Done',
-        style: TextStyle(
-          fontSize: 25.0,
-          fontWeight: FontWeight.bold,
-          color: Colors.blue,
+    return Container(
+      color: Colors.blue,
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.white,
+              spreadRadius: 5,
+              blurRadius: 0,
+              offset: Offset(0, 0),
+            )
+          ],
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        margin: EdgeInsets.only(
+          top: 60.0,
+          left: 20.0,
+          right: 20.0,
+          bottom: 30.0,
+        ),
+        padding: EdgeInsets.all(20.0),
+        child: IntroductionScreen(
+          globalBackgroundColor: Colors.white,
+          pages: listPageViewModel,
+          onDone: () {},
+          done: Text(
+            'Done',
+            style: TextStyle(
+              fontSize: 25.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.blue,
+            ),
+          ),
         ),
       ),
     );
